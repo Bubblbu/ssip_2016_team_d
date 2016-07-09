@@ -61,7 +61,7 @@ a {
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 5rem 6rem; } }
+    padding: 3rem 4rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
@@ -243,3 +243,59 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+ /* Navbar */
+
+.nav ul {
+  list-style: none;
+  /*background-color: #444;*/
+  text-align: center;
+  padding-top: 30px;
+  margin: 0;
+}
+.nav li {
+  /*font-family: 'Oswald', sans-serif;*/
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  padding: 10px;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  transition: .3s background-color;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 1rem;
+}
+ 
+.nav a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.08)
+}
+ 
+.nav a.active {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.08);
+  cursor: default;
+  /*font-weight: bold;*/
+}
+ 
+@media screen and (min-width: 600px) {
+  .nav li {
+    /*width: 120px;*/
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+}
