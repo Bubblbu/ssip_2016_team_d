@@ -1,8 +1,3 @@
----
-title:  SSIP 2016 - Team D
----
-
-
 # SSIP 2016 - Team D
 #### P#5 – Counting objects
 
