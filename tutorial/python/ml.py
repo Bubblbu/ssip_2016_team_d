@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+""" ml.py
+
+Basic machine learning example with scikit-learn
+"""
+
 import numpy as np
 import scipy.io
 import matplotlib.pyplot as plt
@@ -14,6 +20,7 @@ X = data['X']
 # Replace class label -1 with 0
 y[y < 0] = 0
 
+# Use shape to see the dimensions of the data
 print(X.shape, y.shape)
 
 # Load Support Vector Classifier

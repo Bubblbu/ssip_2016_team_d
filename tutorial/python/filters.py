@@ -1,38 +1,32 @@
+# -*- coding: utf-8 -*-
+""" filters.py
+
+Basic functions in scikit-image and matplotlib
+"""
+
 from skimage.io import imread
 from skimage.filters import threshold_otsu
 from skimage import filters
 
-import matplotlib.pyplot as plt
 import numpy as np
 
-# Function for displaying an image
-def show_image(img, colormap = None):
-	plt.imshow(img, cmap=colormap)
-	plt.colorbar()
-	plt.show()
+from helpers import show_image, save_image
 
-def save_image(img, filename, colormap = None):
-	plt.imshow(img, cmap=colormap)
-	plt.savefig(filename)
+# Load Lena
+lena = imread("../lena.jpg")
 
-lena = imread("lena.jpg")
-
-# copy of lena
+# Save the red channel
 red_lena = lena[:,:,0]
-
-thresh_lena = np.copy(red_lena)
+lena_1 = np.copy(red_lena)
 
 # set values < mean intensity to 0
 mean_intensity = np.mean(red_lena)
-thresh_lena[red_lena<mean_intensity] = 250
+lena_1[red_lena<mean_intensity] = 250
 
-# show_image(thresh_lena, colormap="gray")
+show_image(lena_1, colormap="gray")
 
-
-
-# Otsu's method
-
+# Thresholding with Otsu's method
 thresh = threshold_otsu(red_lena)
-binary_lena = red_lena > thresh
+lena_2 = red_lena > thresh
 
-# show_image(binary_lena, colormap="gray")
+show_image(lena_2, colormap="gray")

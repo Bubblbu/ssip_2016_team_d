@@ -1,73 +1,77 @@
+# -*- coding: utf-8 -*-
+"""	operators.py
+
+Point, local and global operators
+"""
+
+import matplotlib.pyplot as plt
+import numpy as np
+
 from skimage.io import imread
 from skimage.morphology import disk
 from skimage.filters.rank import mean
 from skimage.color import rgb2gray
 
-import matplotlib.pyplot as plt
-import numpy as np
-
 from scipy import fftpack
 
-# Function for displaying an image
-def show_image(img, colormap = None):
-	plt.imshow(img, cmap=colormap)
-	plt.colorbar()
-	plt.show()
+from helpers import show_image, save_image
 
-def save_image(img, filename, colormap = None):
-	plt.imshow(img, cmap=colormap)
-	plt.savefig(filename)
+# Load Lena and Lena_with_glasses
+lena = imread("../lena.jpg")
+lena_glass = imread("../lena_glass.jpg")
 
-lena = imread("lena.jpg")
-lena_glass = imread("lena_glass.jpg")
-
-# Point operators - subtraction
+# ====== Point operators =======
+# ------ Pixelweise subtraction ------
 glass = lena - lena_glass
-# show_image(glass)
+show_image(glass)
 
-# Local operators - mean filter
+# ====== Local operators =======
+# ------ Mean filter ------
 mean_lena = mean(rgb2gray(lena), disk(5))
-# show_image(mean_lena, colormap="gray")
+show_image(mean_lena, colormap="gray")
 
-# Global operator
+# ====== Global operators ======
+# ------ Fourier transformation ------
 F1 = fftpack.fft2(rgb2gray(lena))
- 
-# Now shift the quadrants around so that low spatial frequencies are in
-# the center of the 2D fourier transformed image.
-F2 = fftpack.fftshift( F1 )
+F2 = fftpack.fftshift(F1)
+F2_copy = np.copy(F2)
 
 # Calculate a 2D power spectrum
 psd2D = np.abs(F2)
  
-# Now plot up both
-plt.imshow( np.log10( rgb2gray(lena) ), cmap="gray")
-plt.figure()
-plt.imshow( np.log10( psd2D ), cmap="gray")
-
+fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(13.5,6), sharey=True)
+ax0.imshow( np.log10(rgb2gray(lena)), cmap="gray")
+ax1.imshow(np.log10(psd2D), cmap="gray")
+plt.show()
 
 size = F2.shape[0]
 middle = size/2
-offset = 150
+offset = 220
 
-# psd2D[middle-offset:middle+offset,middle-offset:middle+offset] = 1
-# F2[middle-offset:middle+offset,middle-offset:middle+offset] = 0
-
+# -------- Remove low frequency information
 F2[0:offset,:] = 0
 F2[size-offset:size,:] = 0
 F2[:,0:offset] = 0
 F2[:,size-offset:size] = 0
 
-psd2D[0:offset,:] = 1
-psd2D[size-offset:size,:] = 1
-psd2D[:,0:offset] = 1
-psd2D[:,size-offset:size] = 1
+F1_back = fftpack.ifftshift(F2)
+Lena_back = fftpack.ifft2(F1_back)
 
-plt.figure()
-plt.imshow( np.log10( psd2D ), cmap="gray")
+fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(13.5,6), sharey=True)
+ax0.imshow(np.log10(np.abs(F2)), cmap="gray")
+ax1.imshow(np.abs(Lena_back), cmap="gray")
+plt.show()
 
-temp = fftpack.ifftshift(F2)
-back = fftpack.ifft2(temp)
+# -------- Remove high frequency information
+offset = 15
+F2 = F2_copy
 
-plt.figure()
-plt.imshow( np.abs(back), cmap="gray")
+F2[middle-offset:middle+offset,middle-offset:middle+offset] = 0
+
+F1_back = fftpack.ifftshift(F2)
+Lena_back = fftpack.ifft2(F1_back)
+
+fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(13.5,6), sharey=True)
+ax0.imshow(np.log10(np.abs(F2)), cmap="gray")
+ax1.imshow(np.abs(Lena_back), cmap="gray")
 plt.show()
