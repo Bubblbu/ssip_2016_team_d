@@ -1,10 +1,14 @@
 # SSIP 2016 - Team D
 #### P#5 – Counting objects
 
+![Image of Ifo 2](images/ref_camp.jpg)
+
 ----
 
-Example images were taken from oblique angles and displayed really challenging subjects. On our pursuit of the ideal countable target objects Emanuela suggested to work with satellite images of informal settlements in developing countries.
-One of the test images was a refugee camp in Kenya (Ifo 2 Dabaab) and an image of Kibera, a slum of Nairobi.
+
+Our project is *counting objects (windows, roofs)* and the original example images were taken from oblique angles and displayed really challenging subjects. On our pursuit of the ideal countable target objects Emanuela suggested to work with satellite images of informal settlements in developing countries.
+
+One of the test images was a refugee camp in Kenya (Ifo 2 Dabaab) and an image of Kibera, one of the biggest slums of Nairobi.
 
 ## Our take on the task
 
