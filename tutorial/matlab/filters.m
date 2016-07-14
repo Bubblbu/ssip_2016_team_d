@@ -13,5 +13,6 @@ lena_1(red_lena< mean_intensity) = 0;
 figure, imshow(lena_1);
 
 % Thresholding with Otsu's method (not implemented in matlab by default)
+% otsu source: http://www.biomecardio.com/matlab/otsu.html
 thresh = otsu(red_lena, 2);
 figure, imshow(thresh, []); % second parameter to scale the pixel values
