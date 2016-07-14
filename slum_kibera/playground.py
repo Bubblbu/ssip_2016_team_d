@@ -80,7 +80,7 @@ if __name__ == "__main__":
 	
 	# Load Preprocessor
 	print("Preprocessing")
-	p = Preprocessor("../images/original/slum_image.jpg")
+	p = Preprocessor("../images/slum_image.jpg")
 	p.scale_image(scale_factor)
 	p.exposure_equalization(method="equal")
 	p.convert_color("RGB","HSV")
@@ -106,7 +106,7 @@ if __name__ == "__main__":
 	# plot_comparison(mask_c, mean(mask_c, disk(20)), 'mean')
 	
 	masked = np.copy(img)
-	masked = img * resize(mask_c, img.shape)
+	# masked = img * resize(mask_c, img.shape)
 
 	# plot_comparison(img, masked, "masked")
 
@@ -127,5 +127,7 @@ if __name__ == "__main__":
 
 	closed = closing(opening(combined, square(2*scale_factor)), square(2*scale_factor))
 	plot_comparison(combined,  closed, "opening")
+
+	show_image(closed, cmap="gray")
 
 	plt.show()
