@@ -110,7 +110,7 @@ if __name__ == "__main__":
 	
 	# Load Preprocessor
 	print("Preprocessing")
-	p = Preprocessor("../images/original/slum_image.png")
+	p = Preprocessor("../images/slum_image.jpg")
 	p.scale_image(scale_factor)
 	p.save_current_as("normal")
 
@@ -180,10 +180,10 @@ if __name__ == "__main__":
 
 	probas = []
 	features = []
-	for y in xrange(200, 2500, 60):
+	for y in xrange(200, 2500, 50):
 		row = []
 		y *= scale_factor
-		for x in xrange(200, 4600, 60):
+		for x in xrange(200, 4600, 50):
 			x *= scale_factor
 
 			pred = clf.predict(create_features(p, x, y, box_size))[0]
@@ -216,5 +216,4 @@ if __name__ == "__main__":
 
 	plt.xlim((0,img.shape[1]))
 	plt.ylim((img.shape[0],0))
-	plt.imsave("test.png")
 	plt.show()
