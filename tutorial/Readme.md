@@ -1,6 +1,10 @@
 # Image Processing 101
 #### MATLAB & Python
 
+![ML](ml.png)
+
+--------
+
 This repository contains code in MATLAB and Python that solve the same tasks.
 
 The tasks are:
