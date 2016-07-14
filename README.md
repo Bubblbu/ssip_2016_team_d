@@ -8,11 +8,11 @@ One of the test images was a refugee camp in Kenya (Ifo 2 Dabaab) and an image o
 
 ## Our take on the task
 
-### [Image Processing 101](tutorial/Readme.md)
+### [Image Processing 101](tutorial/)
 
 We realized that our team did not only cover 4 different nations, 4 different scientific backgrounds but also very differing levels of experiece in programming. In order make the summer school a useful experience to all of us we decided to create a Image Processing tutorial. In teams of two, we solved small tasks ranging from basic file I/O to Machine Learning in both Python and MATLAB.
 
-### [Population Estimation](population_estimation/Readme.md)
+### [Population Estimation](population_estimation/)
 
 Densely populated urban areas in developing countries such as slums or refugee camps,  are also the most vulnerable areas to natural and manmade disasters.  This is the situation of many informal settlements in the world including our area of study: Dadaab (Ifo 2) - refugee camp. In our project we used satellite images to count the tents in order to estimate the number of Ifo 2 refugee camp population.
 
