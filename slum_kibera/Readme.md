@@ -2,6 +2,8 @@
 
 ## Segmentation with Random Forests
 
+Random Forest Classifier for small 160x160 patches. Labels were:
+
 ![Segmentation](output_images/segmentation.png)
 
 ## Streets
