@@ -16,6 +16,13 @@ We realized that our team did not only cover 4 different nations, 4 different sc
 
 Densely populated urban areas in developing countries such as slums or refugee camps,  are also the most vulnerable areas to natural and manmade disasters.  This is the situation of many informal settlements in the world including our area of study: Dadaab (Ifo 2) - refugee camp. In our project we used satellite images to count the tents in order to estimate the number of Ifo 2 refugee camp population.
 
+## Main findings
+
+By using simple image processing techniques we managed to estimate the size of living space in the refugee camp *Ifo 2*. By combining the results of our algorithm and other information (e.g. average household sizes of Somalis in 2014 [source](http://somalia.unfpa.org/sites/arabstates/files/pub-pdf/Population-Estimation-Survey-of-Somalia-PESS-2013-2014.pdf)) we managed to estimate the population of the total camp.
+
+### Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3): 46.334
+### Our Estimation: 53.958 (replace with actual number)
+
 ## Who is Team D?
 
 | Name | University | Country |
