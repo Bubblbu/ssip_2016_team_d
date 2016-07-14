@@ -1,6 +1,6 @@
 %% preprocessing steps
 % images
-im1 = imread('ref_camp.jpg');
+im1 = imread('../images/ref_camp.jpg');
 
 %work with the first one
 imgray = rgb2gray(im1);
