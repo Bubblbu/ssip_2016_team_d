@@ -25,7 +25,7 @@ Densely populated urban areas in developing countries such as slums or refugee c
 By using simple image processing techniques we managed to estimate the size of living space in the refugee camp *Ifo 2*. By combining the results of our algorithm and other information (e.g. average household sizes of Somalis in 2014 [source](http://somalia.unfpa.org/sites/arabstates/files/pub-pdf/Population-Estimation-Survey-of-Somalia-PESS-2013-2014.pdf)) we managed to estimate the population of the total camp.
 
 | Source | Date | Population estimation  |
-|-------|-----------| ------: |
+|:-------|:-----------| ------: |
 | Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3) | 31.05.2016 | 46.334  |
 | Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3) | 30.06.2014 | 51.685 |
 | Our Estimation (replace with correct number)  | 30.06.2014 | 53.958 |
