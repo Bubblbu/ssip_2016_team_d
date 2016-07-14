@@ -1,4 +1,4 @@
-# SSIP 2016 - Team D
+# [SSIP 2016](http://www.inf.u-szeged.hu/~ssip/2016/) - Team D
 #### P#5 – Counting objects
 
 ![Image of Ifo 2](images/ref_camp.jpg)
