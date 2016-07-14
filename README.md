@@ -16,11 +16,11 @@ One of the test images was a refugee camp in Kenya (Ifo 2 Dabaab) and an image o
 
 We realized that our team did not only cover 4 different nations, 4 different scientific backgrounds but also very differing levels of experiece in programming. In order make the summer school a useful experience to all of us we decided to create a Image Processing tutorial. In teams of two, we solved small tasks ranging from basic file I/O to Machine Learning in both Python and MATLAB.
 
-### [Population Estimation](population_estimation/)
+### [Population Estimation in refugee camps](population_estimation/)
 
 Densely populated urban areas in developing countries such as slums or refugee camps,  are also the most vulnerable areas to natural and manmade disasters.  This is the situation of many informal settlements in the world including our area of study: Dadaab (Ifo 2) - refugee camp. In our project we used satellite images to count the tents in order to estimate the number of Ifo 2 refugee camp population.
 
-## Main findings
+#### Main findings
 
 By using simple image processing techniques we managed to estimate the size of living space in the refugee camp *Ifo 2*. By combining the results of our algorithm and other information (e.g. average household sizes of Somalis in 2014 [source](http://somalia.unfpa.org/sites/arabstates/files/pub-pdf/Population-Estimation-Survey-of-Somalia-PESS-2013-2014.pdf)) we managed to estimate the population of the total camp.
 
@@ -29,6 +29,11 @@ By using simple image processing techniques we managed to estimate the size of l
 | Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3) | 31.05.2016 | 46.334  |
 | Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3) | 30.06.2014 | 51.685 |
 | Our Estimation (replace with correct number)  | 30.06.2014 | 53.958 |
+
+### [Kibera - slum in Nairobi](slum_kibera/)
+
+Another kind of informal settlement that at first seems to be very similar to the case of refugee camps. But narrower streets and alleys, very heterogeneous ground and roof texture and little globally useful color information made this task harder to approach.
+This folder contains the results of our experiments containing machine learning segmentation and street detection with simple image processing methods.
 
 ## Who is Team D?
 
