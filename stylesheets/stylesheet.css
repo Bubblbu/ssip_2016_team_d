@@ -375,26 +375,15 @@ a {
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tg .tg-lqy6{text-align:right;vertical-align:top}
 .tg .tg-yw4l{vertical-align:top}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-yw4l">Source</th>
-    <th class="tg-yw4l">Date</th>
-    <th class="tg-lqy6">Population estimation</th>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&amp;country=110&amp;region=3)</td>
-    <td class="tg-yw4l">31.05.2016</td>
-    <td class="tg-lqy6">46.334</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&amp;country=110&amp;region=3)</td>
-    <td class="tg-yw4l">30.06.2014</td>
-    <td class="tg-lqy6">51.685</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Our Estimation (replace with correct number)</td>
-    <td class="tg-yw4l">30.06.2014</td>
-    <td class="tg-lqy6">53.958</td>
-  </tr>
-</table>  
+
+.circular {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  background: url(http://link-to-your/image.jpg) no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }
