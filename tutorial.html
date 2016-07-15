@@ -33,138 +33,24 @@
         </div>
     </section>
     <section class="main-content">
-        <hr>
+        <blockquote>This page is still under construction</blockquote>
         <h1>Image Processing 101</h1>
+        <figure>
+            <div align="middle"><img src="https://raw.githubusercontent.com/Bubblbu/ssip_2016_team_d/master/tutorial/ml.png" title="SVM"    ></div>
+        </figure>
+
+    
         <p>Due to the heterogeneous coding experience in our team we decided to dedicate a considerable amount of our time to pair coding and the basics of image processing.
         As for the choice of our coding language, we decided that both <em>Matlab</em> and <em>Python</em> are sound choices with their respective advantages and disadvantages.</p>
         
-        <h3>Prerequisites</h3>
-        <p>
-        In case of Python we will mostly be using <a href="https://scikit-image.org">Scikit Image</a>, <a href="https://scikit-learn.org">Scikit Learn</a> and <a href="https://matplotlib.org">Matplotlib</a><br>
-        For Matlab it is enough to install the <a href="http://de.mathworks.com/products/image/">Image Processing Toolbox</a></p>
-
-        <div class="wrap">
-            <div class="left_col">
-                <pre><code>
-import skimage
-import sklearn
-import matplotlib as plt
-                </code></pre>
-            </div>
-            <div class="right_col">
-                <pre>
-                    <code class="matlab">
-
-
-
-                    </code>
-                </pre>
-            </div>
-        </div>
-     
-
-
-        <h2>The basics</h2>
-        <ul>
-            <li>load an image & display it</li>
-        </ul>
-
-        <div class="wrap">
-            <div class="left_col">
-                <pre>
-                    <code class="python">
-lena = imread("lena.jpg")
-
-# Draw and display an image
-plt.imshow(lena)
-plt.show()
-                    </code>
-                </pre>
-            </div>
-            <div class="right_col">
-                <pre>
-                    <code class="matlab">
-lena = imread("lena.jpg")
-
-a = 1;    % MATLAB comment
-b = 2;
-c = a^2 + b^2;
-                    </code>
-                </pre>
-            </div>
-        </div>
-
-        <ul>
-            <li>access a part of the image</li>
-            <li>access a single color channel</li>
-            <li>convert to grayscale & other color spaces</li>
-        </ul>
-
-       <div class="wrap">
-            <div class="left_col">
-                <pre>
-                    <code class="python">
-# Matrix indices are [rows, columns]
-# Extract the rows 100 to 200 & all columns
-sub_lena = lena[100:200 , 0:-1]
-show_image(sub_lena)
-
-# Accessing color channels: third index -> [rows, cols, channel]
-red_lena = lena[:,:,0]
-show_image(red_lena, cmap="gray")
-
-# Convert to grayscale and use different colormap
-gray_lena = rgb2gray(lena)
-show_image(gray_lena, colormap="inferno")
-
-# Convert to other colorspace
-hsv_lena = convert_colorspace(lena, "RGB", "HSV")
-                    </code>
-                </pre>
-            </div>
-            <div class="right_col">
-                <pre>
-                    <code class="matlab">
-lena = imread("lena.jpg")
-
-a = 1;    % MATLAB comment
-b = 2;
-c = a^2 + b^2;
-                    </code>
-                </pre>
-            </div>
-        </div>
-
-        <ul>
-            <li>save the image</li>
-        </ul>
-
-        <div class="wrap">
-            <div class="left_col">
-                <pre>
-                    <code class="python">
-lena = imread("lena.jpg")
-
-# Draw and display an image
-plt.imshow(lena)
-plt.show()
-                    </code>
-                </pre>
-            </div>
-            <div class="right_col">
-                <pre>
-                    <code class="matlab">
-lena = imread("lena.jpg")
-
-a = 1;    % MATLAB comment
-b = 2;
-c = a^2 + b^2;
-                    </code>
-                </pre>
-            </div>
-        </div>
-
-        In order to see the complete tutorial
+        <p>Topics covered were amongst others:</p>
+        <ol>
+            <li>Basic file I/O and manipulation</li>
+            <li>Editing the exposure of images</li>
+            <li>Examplary filters</li>
+            <li>Point, local and global operators</li>
+            <li>A basic machine learning example using SVM</li>
+        </ol>
     </section>
 </body>
 
