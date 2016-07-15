@@ -28,7 +28,7 @@ By using simple image processing techniques we managed to estimate the size of l
 |:-------|:-----------| ------: |
 | Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3) | 31.05.2016 | 46.334  |
 | Official Estimation according to [UNHCR](http://data.unhcr.org/horn-of-africa/settlement.php?id=22&country=110&region=3) | 30.06.2014 | 51.685 |
-| Our Estimation (replace with correct number)  | 30.06.2014 | 53.958 |
+| Our Estimation (replace with correct number)  | 30.06.2014 | 53.029 |
 
 ### [Kibera - slum in Nairobi](slum_kibera/)
 
