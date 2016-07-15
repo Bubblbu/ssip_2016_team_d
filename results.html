@@ -30,8 +30,66 @@
     </section>
     <section class="main-content">
         <hr>
-        <h1>
-<a id="ssip-2016---team-d" class="anchor" href="#ssip-2016---team-d" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results</h1>
+        <h1>Our Results</h1>
+        <p>A brief summary of our pair programming sessions and the tutorial can be seen <a href="tutorial.html">here</a> and in greater detail on <a href="https://github.com/Bubblbu/ssip_2016_team_d/tree/master/tutorial">Github</a></p>
+        <p>The remaining parts of our work, counting roofs in slums & refugee camps yielded quite interesting results.</p>
+        <h2>Population Estimation in Ifo 2</h2> Interestingly we managed to get quite close to the official population numbers provided by the UNHCR on the reference pages for refugee camps.
+        <table class="tg">
+            <tr>
+                <th class="tg-yw4l">Source</th>
+                <th class="tg-yw4l">Date</th>
+                <th class="tg-lqy6">Population estimation</th>
+            </tr>
+            <tr>
+                <td class="tg-yw4l">Official Estimation (<a href="http://data.unhcr.org/horn-of-africa/settlement.php?id=22&amp;country=110&amp;region=3">UNHCR</a>)</td>
+                <td class="tg-yw4l">31.05.2016</td>
+                <td class="tg-lqy6">46.334</td>
+            </tr>
+            <tr>
+                <td class="tg-yw4l">Official Estimation (<a href="http://data.unhcr.org/horn-of-africa/settlement.php?id=22&amp;country=110&amp;region=3">UNHCR</a>)</td>
+                <td class="tg-yw4l">30.06.2014</td>
+                <td class="tg-lqy6">51.685</td>
+            </tr>
+            <tr>
+                <td class="tg-yw4l">Our Estimation</td>
+                <td class="tg-yw4l">30.06.2014</td>
+                <td class="tg-lqy6"><b>53.958</b></td>
+            </tr>
+        </table>
+        <h2>Experimental work on slum images</h2>
+        <h3>Preprocessing</h3>
+        <p>Extensive work was invested in preprocessing and different combinations of contrast stretching, color space convertions and histogram equalizations. Certain combinations proved to be fitting for different purposes (e.g. structural information, rough segmentation, emphasize colors).</p>
+        <h3>Segmentation with Random Forests</h3>
+        <p>Random Forest Classifier for small 160x160 patches. Used labels were:</p>
+        <ul>
+            <li>White buildings (20 patches)</li>
+            <li>Brown buildings (20 patches)</li>
+            <li>Gray buildiings (20 patches)</li>
+            <li>Vegetation/not building (20 patches)</li>
+        </ul>
+        <p>Extracted features:</p>
+        <ul>
+            <li>Mean intensity for color channels</li>
+            <li>Canny edges</li>
+            <li>Eigenvalues of the structure tensor</li>
+        </ul>
+        <p>Results show that a rough segmentation is actually promising considering the limited amount of training data.</p>
+        <figure>
+            <div align="middle"><img src="https://raw.githubusercontent.com/Bubblbu/ssip_2016_team_d/master/slum_kibera/output_images/segmentation.png" title="segmentation" width="700" height="409"></div>
+        </figure>
+
+        <h3>Streets</h3>
+        <p>Pure image processing approach to emphasize and detect streets in the image.
+Result could be combined with the result from the ML segmentation to obtain a possible ensuing point for a counting algorithm.</p>
+        <figure>
+            <div align="middle"><img src="https://raw.githubusercontent.com/Bubblbu/ssip_2016_team_d/master/slum_kibera/output_images/edge_image.png" title="streets" width="700" height="409"></div>
+        </figure>
+
+        <h3>Outlook</h3>
+        <ul>
+            <li>Line detection to extract street data</li>
+            <li>Line detectCount buildings</li>
+        </ul>
     </section>
 </body>
 
