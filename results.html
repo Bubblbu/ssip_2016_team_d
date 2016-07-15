@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ssip 2016 team d by Bubblbu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Counting Objects @ SSIP 2016</h1>
+        <h2 class="project-tagline">Population Estimation in Refugee Camps</h2>
+        <a href="https://github.com/Bubblbu/ssip_2016_team_d" class="btn">View on GitHub</a>
+        <a href="https://github.com/Bubblbu/ssip_2016_team_d/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/Bubblbu/ssip_2016_team_d/tarball/master" class="btn">Download .tar.gz</a>
+        <div class="nav">
+            <ul>
+                <li class="home"><a href="index.html">Home</a></li>
+                <li class="tutorials"><a href="project.html">Project Description</a></li>
+                <li class="about"><a class="active" href="results.html">Results</a></li>
+                <li class="news"><a href="tutorial.html">Image Processing 101</a></li>
+                <li class="news"><a href="about.html">About us</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-content">
+        <hr>
+        <h1>Our Results</h1>
+        <p>A brief summary of our pair programming sessions and the tutorial can be seen <a href="tutorial.html">here</a> and in greater detail on <a href="https://github.com/Bubblbu/ssip_2016_team_d/tree/master/tutorial">Github</a></p>
+        <p>The remaining parts of our work, counting roofs in slums & refugee camps yielded quite interesting results.</p>
+        <h2>Population Estimation in Ifo 2</h2>
+        <p>Interestingly we managed to get quite close to the official population numbers provided by the UNHCR on the reference pages for refugee camps.</p>
+        <p>
+            <div align="middle">
+                <table class="tg">
+                    <tr>
+                        <th class="tg-yw4l">Source</th>
+                        <th class="tg-yw4l">Date</th>
+                        <th class="tg-lqy6">Population estimation</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Official Estimation (<a href="http://data.unhcr.org/horn-of-africa/settlement.php?id=22&amp;country=110&amp;region=3">UNHCR</a>)</td>
+                        <td class="tg-yw4l">31.05.2016</td>
+                        <td class="tg-lqy6">46.334</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Official Estimation (<a href="http://data.unhcr.org/horn-of-africa/settlement.php?id=22&amp;country=110&amp;region=3">UNHCR</a>)</td>
+                        <td class="tg-yw4l">30.06.2014</td>
+                        <td class="tg-lqy6">51.685</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Our Estimation</td>
+                        <td class="tg-yw4l">30.06.2014</td>
+                        <td class="tg-lqy6"><b>53.029</b></td>
+                    </tr>
+                </table>
+            </div>
+        </p>
+        <h2>Experimental work on slum images</h2>
+        <h3>Preprocessing</h3>
+        <p>Extensive work was invested in preprocessing and different combinations of contrast stretching, color space convertions and histogram equalizations. Certain combinations proved to be fitting for different purposes (e.g. structural information, rough segmentation, emphasize colors).</p>
+        <h3>Segmentation with Random Forests</h3>
+        <p>Random Forest Classifier for small 160x160 patches. Used labels were:</p>
+        <ul>
+            <li>White buildings (20 patches)</li>
+            <li>Brown buildings (20 patches)</li>
+            <li>Gray buildiings (20 patches)</li>
+            <li>Vegetation/not building (20 patches)</li>
+        </ul>
+        <p>Extracted features:</p>
+        <ul>
+            <li>Mean intensity for color channels</li>
+            <li>Canny edges</li>
+            <li>Eigenvalues of the structure tensor</li>
+        </ul>
+        <p>Results show that a rough segmentation is actually promising considering the limited amount of training data.</p>
+        <figure>
+            <div align="middle"><img src="https://raw.githubusercontent.com/Bubblbu/ssip_2016_team_d/master/slum_kibera/output/segmentation.png" title="segmentation" width="700" height="409"></div>
+        </figure>
+        <h3>Streets</h3>
+        <p>Pure image processing approach to emphasize and detect streets in the image. Result could be combined with the result from the ML segmentation to obtain a possible ensuing point for a counting algorithm.</p>
+        <figure>
+            <div align="middle"><img src="https://raw.githubusercontent.com/Bubblbu/ssip_2016_team_d/master/slum_kibera/output/edge_image.png" title="streets" width="700" height="409"></div>
+        </figure>
+        <h3>Outlook</h3>
+        <ul>
+            <li>Line detection to extract street data</li>
+            <li>Line detectCount buildings</li>
+        </ul>
+        <footer class="site-footer">
+            <span class="site-footer-owner"><a href="https://github.com/Bubblbu/ssip_2016_team_d">SSIP 2016 Team D</a> is maintained by <a href="https://github.com/Bubblbu">Bubblbu</a>.</span>
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        </footer>
+    </section>
+</body>
+
+</html>
