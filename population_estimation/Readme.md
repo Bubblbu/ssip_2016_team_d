@@ -8,6 +8,7 @@ Using thresholds on the original picture and the subtracted, finally using a log
 ![Result](../output_images/resgray.jpg)
 ## Estimating the population
 Using given numbers by the UNICEF (average 6 people per household in Somalia) and studying the pixel size of a normal building of the picture, we can estimate the population by using
-ppl_in_image = total_living_pixel * ppl_per_household / avg_pixel_per_household;
+
+![magic equation](../images/magic_eq.gif)
 
 ## Refugee camp Ifo 2 Dabaaab
