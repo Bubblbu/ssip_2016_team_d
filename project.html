@@ -30,42 +30,46 @@
     </section>
     <section class="main-content">
         <hr>
-
-        <h2>
-<a id="What was done before" class="anchor" href="#what-was-done-before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Motivation/Background</h2>
-        <dir align="jusify" ><p>Densely populated urban areas in developing countries such as slums or refugee camps,  are also the most vulnerable areas to natural and manmade disasters.  This is the situation of many informal settlements in the world including our area of study: Dadaab (Ifo 2) - refugee camp. In our project we used satellite images to count the tents in order to estimate the number of Ifo 2 refugee camp population.</p></dir>
-        <h2>
-<a id="What was done before" class="anchor" href="#what-was-done-before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Literature review</h2>
-        <dir align="jusify" ><p>Regarding the literature, most studies used various machine learning algorithms for buildings detection/ counting from RGB satellite images. For example, Guo, Shao et al. (2016) used convolutional neural network (CNN) and AdaBoost algorithms to identify village buildings from RGB images in Kaysone villages, Laos. AdaBoost was used together with other algorithms such as support vector machine (SVM) to extract buildings from RGB images on different urban areas (Dikmen and Halici 2014). Cote and Saeedi (2013) used edge detection and corners (Haaris corner detection algorithm (Harris and Stephens 1988) to improve the geometric accuracy of buildings.<br>
-        REFERENCES:<br>
-        Cote, M. and P. Saeedi (2013). "Automatic rooftop extraction in nadir aerial imagery of suburban regions using corners and variational level set evolution." Geoscience and Remote Sensing, IEEE Transactions on 51(1): 313-328 <br>
-        Dikmen, M. and U. Halici (2014). "A learning-based resegmentation method for extraction of buildings in satellite images." Geoscience and Remote Sensing Letters, IEEE 11(12): 2150-2153 <br>
-        Guo, Z., et al. (2016). "Identification of Village Building via Google Earth Images and Supervised Machine Learning Methods." Remote Sensing 8(4): 271<br>
-        Harris, C. and M. Stephens (1988). A combined corner and edge detector. Alvey vision conference, Citeseer<br></p></dir>
-        <h2>
-<a id="What was done before" class="anchor" href="#what-was-done-before" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Our methodology</h2>
-        <dir align="jusify" ><p><ul>
-  <li>Even studying the picture with our own eyes, or based on the histogram, we can say that the objects to be counted can be very well distinguished from the environment based on their intensity values</li>
-  <li>1st step: find a threshold based on intensity (studying the histogram) so that only appropriate objects remain on the logical map</li>
-  <li>Problem with that: if there are clouds, they are bright as well and should be eliminated somehow, small artifacts as well</li>
-  <li>2nd step: Blur the image and subtract it from the original one, this will move away the clouds, the bright house parts still remain: studying the histogram, we can tell that the brighter the values are, the more possible it is for an object to be in our region of interest, so we have to find an appropriate threshold again</li>
-  <figure>
-            <div align="middle"><img  src="https://lh3.googleusercontent.com/-MSMfrsHggns/V4gONYirvdI/AAAAAAAAAQI/rkw_G7bUjU8TcNI_0t-_onded96jZjozQCCo/s912/houseness.jpg" title="blur" width="700" height="409"></div>
+        <h2>Motivation and Background</h2>
+        <p>Densely populated urban areas in developing countries such as slums or refugee camps, are also the most vulnerable areas to natural and manmade disasters. This is the situation of many informal settlements in the world including our area of study: Dadaab (Ifo 2) - refugee camp. In our project we used satellite images to count the tents in order to estimate the number of Ifo 2 refugee camp population.</p>
+        <h2>Literature review</h2>
+        <p>Regarding the literature, most studies used various machine learning algorithms for buildings detection/ counting from RGB satellite images. For example, Guo, Shao et al. (2016) used convolutional neural network (CNN) and AdaBoost algorithms to identify village buildings from RGB images in Kaysone villages, Laos. AdaBoost was used together with other algorithms such as support vector machine (SVM) to extract buildings from RGB images on different urban areas (Dikmen and Halici 2014). Cote and Saeedi (2013) used edge detection and corners (Harris corner detection algorithm (Harris and Stephens 1988) to improve the geometric accuracy of buildings.</p>
+        <h2>Methodology</h2>
+        <p>Even studying the picture with our own eyes, or based on the histogram, we can say that the objects to be counted can be very well distinguished from the environment based on their intensity values</p>
+        <ol>
+            <li>
+                <p>Find a threshold based on intensity (studying the histogram) so that only appropriate objects remain on the logical map</p>
+                <p>Problem with that: if there are clouds, they are bright as well and should be eliminated somehow, small artifacts as well</p>
+            </li>
+            <li>
+                <p>Blur the image and subtract it from the original one, this will move away the clouds, the bright house parts still remain</p>
+                <p>Studying the histogram, we can tell that the brighter the values are, the more possible it is for an object to be in our region of interest, so we have to find an appropriate threshold again</p>
+            </li>
+            <figure>
+                <div align="middle"><img src="https://lh3.googleusercontent.com/-MSMfrsHggns/V4gONYirvdI/AAAAAAAAAQI/rkw_G7bUjU8TcNI_0t-_onded96jZjozQCCo/s912/houseness.jpg" title="blur" width="700" height="409"></div>
             </figure>
-  <li>Simply create an AND operator between 2 thresholds, this will eliminate the clouds and keep the most possible regions</li>
-  <li>3rd step: Use morphological opening to eliminate small artifacts and only keep the bigger objects</li>
-  <figure>
-            <div align="middle"><img  src="https://lh3.googleusercontent.com/-XkGhHe-nh5k/V4gONAMidJI/AAAAAAAAAQA/4GE-3hoc700SrqUeyOHBDmqyVUqh351SgCCo/s800/imres.jpg" title="first" width="700" height="409"></div>
-            </figure> 
-  <figure>
-            <div align="middle"><img  src="https://lh3.googleusercontent.com/-SbH4mBAqDtI/V4gONaDd_kI/AAAAAAAAAQE/1qkMlX1-VJAk5RsyO_HPkQrjWOymMkdHACCo/s800/resseg.jpg" title="second" width="700" height="409"></div>
+            <p>Simply create an AND operator between 2 thresholds, this will eliminate the clouds and keep the most possible regions</p>
+            <li>
+                <p>Use morphological opening to eliminate small artifacts and only keep the bigger objects</p>
+            </li>
+            <figure>
+                <div align="middle"><img src="https://lh3.googleusercontent.com/-XkGhHe-nh5k/V4gONAMidJI/AAAAAAAAAQA/4GE-3hoc700SrqUeyOHBDmqyVUqh351SgCCo/s800/imres.jpg" title="first" width="700" height="409"></div>
             </figure>
-  <li>4th step: Label the connected components of the binary image and extract the region properties, like area</li>
-  <li>5th: Based on these properties, we can estimate the numer of people living in the area with a formula</li></ul>
-  </p></dir>
-        <h2>  
-        
-        <h2>
+            <figure>
+                <div align="middle"><img src="https://lh3.googleusercontent.com/-SbH4mBAqDtI/V4gONaDd_kI/AAAAAAAAAQE/1qkMlX1-VJAk5RsyO_HPkQrjWOymMkdHACCo/s800/resseg.jpg" title="second" width="700" height="409"></div>
+            </figure>
+            <li>
+                <p>Label the connected components of the binary image and extract the region properties, like area</p>
+            </li>
+            <li>
+                <p>Based on these properties, we can estimate the numer of people living in the area with a formula</p>
+            </li>
+        </ol>
+        <h3>References</h3>
+        <p>Cote, M. and P. Saeedi (2013). "Automatic rooftop extraction in nadir aerial imagery of suburban regions using corners and variational level set evolution." Geoscience and Remote Sensing, IEEE Transactions on 51(1): 313-328</p>
+        <p>Dikmen, M. and U. Halici (2014). "A learning-based resegmentation method for extraction of buildings in satellite images." Geoscience and Remote Sensing Letters, IEEE 11(12): 2150-2153</p>
+        <p>Guo, Z., et al. (2016). "Identification of Village Building via Google Earth Images and Supervised Machine Learning Methods." Remote Sensing 8(4): 271</p>
+        <p>Harris, C. and M. Stephens (1988). A combined corner and edge detector. Alvey vision conference, Citeseer</p>
     </section>
 </body>
 
